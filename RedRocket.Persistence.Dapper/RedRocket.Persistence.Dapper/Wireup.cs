@@ -5,9 +5,9 @@ using FlitBit.Wireup;
 using FlitBit.Wireup.Meta;
 using RedRocket.Persistence.Dapper.Infrastructure;
 
+[assembly: Wireup(typeof(RedRocket.Persistence.Dapper.AssemblyWireup))]
 namespace RedRocket.Persistence.Dapper
 {
-    [assembly: Wireup(typeof(RedRocket.Persistence.Dapper.AssemblyWireup))]
     public class AssemblyWireup : IWireupCommand
     {
         public void Execute(IWireupCoordinator coordinator)

@@ -5,14 +5,14 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Attributes
     public interface IBasicColumn
     {
         string Column { get; }
-        string Schema { get; set; }
+        string Schema { get;  }
     }
 
 
     public interface IColumn : IBasicColumn
     {
-        bool Insert { get; set; }
-        bool Update { get; set; }
+        bool Insert { get; }
+        bool Update { get;  }
     }
 
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
@@ -26,8 +26,8 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Attributes
         }
 
         public string Column { get; private set; }
-        public string Schema { get; set; }
-        public bool Insert { get; set; }
-        public bool Update { get; set; }
+        public string Schema { get; private set; }
+        public bool Insert { get; private set; }
+        public bool Update { get; private set; }
     }
 }

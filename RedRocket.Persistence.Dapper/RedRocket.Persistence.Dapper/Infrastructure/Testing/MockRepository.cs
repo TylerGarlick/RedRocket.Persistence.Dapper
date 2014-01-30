@@ -37,6 +37,7 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Testing
         public T Add(T entity)
         {
             Entities.Add(entity);
+            return entity;
         }
 
         public T Update(T entity)

@@ -11,9 +11,9 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Attributes
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
     public class PrimaryKeyAttribute : ColumnAttribute, IPrimaryKey
     {
-        public PrimaryKeyAttribute(string columnName = null, string schema = null) : base(columnName, false, true)
+        public PrimaryKeyAttribute(string columnName = null, string schema = null)
+            : base(columnName, false, true)
         {
-            Schema = schema;
         }
     }
 }

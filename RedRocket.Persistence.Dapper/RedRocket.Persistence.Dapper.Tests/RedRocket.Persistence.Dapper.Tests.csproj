@@ -84,6 +84,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RedRocket.Persistence.Dapper\RedRocket.Persistence.Dapper.csproj">
+      <Project>{B430CE7E-4333-4692-924D-1F8A3786F145}</Project>
+      <Name>RedRocket.Persistence.Dapper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -101,11 +101,11 @@ namespace RedRocket.Persistence.Dapper.Infrastructure
                 var insertQuery = new LinqInsert<T>(entity);
                 var sql = insertQuery.ToSql().ToQuery();
                 var rows = transaction.Connection.Execute(sql, entity);
-                if(rows > 0)
+                if (rows > 0)
                     transaction.Commit();
-                else 
+                else
                     transaction.Rollback();
-                
+
                 return entity;
             }
         }
@@ -130,15 +130,13 @@ namespace RedRocket.Persistence.Dapper.Infrastructure
         {
             using (var transaction = Connection.OpenAndCreateTransaction())
             {
-                var updateQuery = new Linq<T>(entity);
+                var updateQuery = new LinqDelete<T>(entity);
                 var sql = updateQuery.ToSql().ToQuery();
                 var rows = transaction.Connection.Execute(sql, entity);
                 if (rows == 1)
                     transaction.Commit();
                 else
                     transaction.Rollback();
-
-                return entity;
             }
         }
 

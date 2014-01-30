@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <version>$version$</version>
+    <authors>Tyler Garlick</authors>
+    <owners>Tyler Garlick</owners>
+    <id>RedRocket.Persistence.Dapper</id>
+    <title>RedRocket | Persistence | Dapper</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Dapper implementation of the RedRocket Persistence Framework</description>
+    <tags>RedRocket Framework, RedRocket, Entity, Dto, FlitBit, Generic Repository, Persistence, Dapper, SQLinq
+    </tags>
+    <dependencies>
+      <dependency id="RedRocket.Utilities.Core" />
+      <dependency id="FlitBit.Dapper"/>
+    </dependencies>
+  </metadata>
+  <files />
+</package>

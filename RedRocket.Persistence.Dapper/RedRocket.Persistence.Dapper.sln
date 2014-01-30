@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedRocket.Persistence.Dapper", "RedRocket.Persistence.Dapper\RedRocket.Persistence.Dapper.csproj", "{B430CE7E-4333-4692-924D-1F8A3786F145}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{41F88BC0-5B55-415C-83EB-941E8B51E25E}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedRocket.Persistence.Dapper.Tests", "RedRocket.Persistence.Dapper.Tests\RedRocket.Persistence.Dapper.Tests.csproj", "{C25AC6A6-55E0-4AF9-948E-0B72636C2096}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ACE2028C-85A6-4E4A-8EAC-9F6EE410E8FD}"
+	ProjectSection(SolutionItems) = preProject
+		nuspec.xsd = nuspec.xsd
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B430CE7E-4333-4692-924D-1F8A3786F145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B430CE7E-4333-4692-924D-1F8A3786F145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B430CE7E-4333-4692-924D-1F8A3786F145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B430CE7E-4333-4692-924D-1F8A3786F145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C25AC6A6-55E0-4AF9-948E-0B72636C2096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C25AC6A6-55E0-4AF9-948E-0B72636C2096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C25AC6A6-55E0-4AF9-948E-0B72636C2096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C25AC6A6-55E0-4AF9-948E-0B72636C2096}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

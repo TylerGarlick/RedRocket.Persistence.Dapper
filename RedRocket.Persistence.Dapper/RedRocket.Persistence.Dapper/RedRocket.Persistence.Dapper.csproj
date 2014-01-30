@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B430CE7E-4333-4692-924D-1F8A3786F145}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RedRocket.Persistence.Dapper</RootNamespace>
+    <AssemblyName>RedRocket.Persistence.Dapper</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuSpecFile>RedRocket.Persistence.Dapper.nuspec</NuSpecFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FlitBit.Copy">
+      <HintPath>..\packages\FlitBit.Copy.2.8.4\lib\net40\FlitBit.Copy.dll</HintPath>
+    </Reference>
+    <Reference Include="FlitBit.Core">
+      <HintPath>..\packages\FlitBit.Core.2.11.6\lib\net40\FlitBit.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FlitBit.Dapper">
+      <HintPath>..\packages\FlitBit.Dapper.0.0.1\lib\net45\FlitBit.Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="FlitBit.Dto">
+      <HintPath>..\packages\FlitBit.Dto.2.5.0\lib\net40\FlitBit.Dto.dll</HintPath>
+    </Reference>
+    <Reference Include="FlitBit.Emit">
+      <HintPath>..\packages\FlitBit.Emit.2.8.7\lib\net40\FlitBit.Emit.dll</HintPath>
+    </Reference>
+    <Reference Include="FlitBit.IoC">
+      <HintPath>..\packages\FlitBit.IoC.2.13.1\lib\net40\FlitBit.IoC.dll</HintPath>
+    </Reference>
+    <Reference Include="FlitBit.Wireup">
+      <HintPath>..\packages\FlitBit.Wireup.3.1.0\lib\net40\FlitBit.Wireup.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations">
+      <HintPath>..\packages\JetBrains.Annotations.7.0\lib\net45\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RedRocket.Utilities.Core">
+      <HintPath>..\packages\RedRocket.Utilities.Core.1.0.7\lib\net45\RedRocket.Utilities.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IBasicRepository.cs" />
+    <Compile Include="IBatchRepository.cs" />
+    <Compile Include="IBatchTransactionRepository.cs" />
+    <Compile Include="Infrastructure\Configuration\DefaultConnection.cs" />
+    <Compile Include="Db.cs" />
+    <Compile Include="Infrastructure\Expressions\ILinqDelete.cs" />
+    <Compile Include="Infrastructure\Expressions\LinqDelete.cs" />
+    <Compile Include="Infrastructure\Expressions\LinqDeleteResult.cs" />
+    <Compile Include="Infrastructure\Testing\MockRepository.cs" />
+    <Compile Include="IReadOnlyDapperRepository.cs" />
+    <Compile Include="IReadOnlyRepository.cs" />
+    <Compile Include="IBasicUpsertEnabledRepository.cs" />
+    <Compile Include="Infrastructure\Repository.cs" />
+    <Compile Include="Wireup.cs" />
+    <Compile Include="ExternalWireup\Dependency.FlitBit.Dto.cs" />
+    <Compile Include="ExternalWireup\Dependency.FlitBit.IoC.cs" />
+    <Compile Include="ExternalWireup\Dependency.FlitBit.Wireup.cs" />
+    <Compile Include="Infrastructure\Attributes\ColumnAttribute.cs" />
+    <Compile Include="Infrastructure\Attributes\PrimaryKeyAttribute.cs" />
+    <Compile Include="Infrastructure\Attributes\SubQueryAttribute.cs" />
+    <Compile Include="Infrastructure\Attributes\TableAttribute.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="Infrastructure\Expressions\Compiler\ISqlExpressionResult.cs" />
+    <Compile Include="Infrastructure\Expressions\Compiler\SqlExpressionCompiler.cs" />
+    <Compile Include="Infrastructure\Expressions\Compiler\SqlExpressionCompilerResult.cs" />
+    <Compile Include="Infrastructure\Expressions\Compiler\SqlExpressionCompilerSelectorResult.cs" />
+    <Compile Include="Infrastructure\Expressions\Dynamic\DynamicLinq.cs" />
+    <Compile Include="Infrastructure\Expressions\Dynamic\DynamicLinqExpression.cs" />
+    <Compile Include="Infrastructure\Expressions\Dynamic\DynamicLinqExpressionCollection.cs" />
+    <Compile Include="Infrastructure\Expressions\Dynamic\DynamicLinqInsert.cs" />
+    <Compile Include="Infrastructure\Expressions\Dynamic\DynamicLinqJoinExpression.cs" />
+    <Compile Include="Infrastructure\Expressions\Dynamic\DynamicLinqJoinOperator.cs" />
+    <Compile Include="Infrastructure\Expressions\Dynamic\DynamicLinqLambdaExpression.cs" />
+    <Compile Include="Infrastructure\Expressions\Dynamic\DynamicLinqSubQueryJoinExpression.cs" />
+    <Compile Include="Infrastructure\Expressions\Dynamic\DynamicLinqUpdate.cs" />
+    <Compile Include="Infrastructure\Expressions\Dynamic\DynamicLinqWhereOperator.cs" />
+    <Compile Include="Infrastructure\Expressions\Dynamic\Extensions\DynamicLinqJoinOperatorExtensions.cs" />
+    <Compile Include="Infrastructure\Expressions\Dynamic\IDynamicLinqExpression.cs" />
+    <Compile Include="Infrastructure\Expressions\ILinq.cs" />
+    <Compile Include="Infrastructure\Expressions\ILinqIf.cs" />
+    <Compile Include="Infrastructure\Expressions\ILinqInsert.cs" />
+    <Compile Include="Infrastructure\Expressions\ILinqJoinExpression.cs" />
+    <Compile Include="Infrastructure\Expressions\ILinqResult.cs" />
+    <Compile Include="Infrastructure\Expressions\ILinqUpdate.cs" />
+    <Compile Include="Infrastructure\Expressions\ObjectExtensions.cs" />
+    <Compile Include="Infrastructure\Expressions\Linq.cs" />
+    <Compile Include="Infrastructure\Expressions\LinqCollection.cs" />
+    <Compile Include="Infrastructure\Expressions\LinqCollectionResult.cs" />
+    <Compile Include="Infrastructure\Expressions\LinqIf.cs" />
+    <Compile Include="Infrastructure\Expressions\LinqIfOperator.cs" />
+    <Compile Include="Infrastructure\Expressions\LinqIfResult.cs" />
+    <Compile Include="Infrastructure\Expressions\LinqInsert.cs" />
+    <Compile Include="Infrastructure\Expressions\LinqInsertResult.cs" />
+    <Compile Include="Infrastructure\Expressions\LinqJoinResult.cs" />
+    <Compile Include="Infrastructure\Expressions\LinqSelectResult.cs" />
+    <Compile Include="Infrastructure\Expressions\LinqUpdate.cs" />
+    <Compile Include="Infrastructure\Expressions\LinqUpdateResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="RedRocket.Persistence.Dapper.nuspec" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Infrastructure\Expressions\readme.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

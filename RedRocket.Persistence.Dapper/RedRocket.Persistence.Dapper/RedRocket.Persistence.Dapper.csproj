@@ -39,8 +39,9 @@
     <Reference Include="FlitBit.Core">
       <HintPath>..\packages\FlitBit.Core.2.11.6\lib\net40\FlitBit.Core.dll</HintPath>
     </Reference>
-    <Reference Include="FlitBit.Dapper">
-      <HintPath>..\packages\FlitBit.Dapper.0.0.1\lib\net45\FlitBit.Dapper.dll</HintPath>
+    <Reference Include="FlitBit.Dapper, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FlitBit.Dapper.0.0.2\lib\net45\FlitBit.Dapper.dll</HintPath>
     </Reference>
     <Reference Include="FlitBit.Dto">
       <HintPath>..\packages\FlitBit.Dto.2.5.0\lib\net40\FlitBit.Dto.dll</HintPath>
@@ -58,7 +59,7 @@
       <HintPath>..\packages\JetBrains.Annotations.7.0\lib\net45\JetBrains.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="RedRocket.Utilities.Core">
       <HintPath>..\packages\RedRocket.Utilities.Core.1.0.7\lib\net45\RedRocket.Utilities.Core.dll</HintPath>

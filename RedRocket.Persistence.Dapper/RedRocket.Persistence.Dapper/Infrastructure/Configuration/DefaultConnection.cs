@@ -4,6 +4,8 @@ using FlitBit.IoC.Meta;
 
 namespace RedRocket.Persistence.Dapper.Infrastructure.Configuration
 {
+    
+
     public interface IConnection
     {
         IDbConnection Open(bool openConnection = true);

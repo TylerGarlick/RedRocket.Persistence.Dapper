@@ -17,7 +17,7 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions
         public string Where { get; set; }
         public IDictionary<string, object> Parameters { get; set; }
 
-        public string ToQuery()
+        public string ToSql()
         {
             if (string.IsNullOrWhiteSpace((Table ?? string.Empty).Trim()))
                 throw new ArgumentException("SQLinqInsertResult.Table is required to have a value.", "Table");

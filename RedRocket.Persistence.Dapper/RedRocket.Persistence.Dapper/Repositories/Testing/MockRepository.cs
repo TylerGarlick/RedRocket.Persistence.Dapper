@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace RedRocket.Persistence.Dapper.Infrastructure.Testing
+namespace RedRocket.Persistence.Dapper.Infrastructure.Repositories.Testing
 {
     public class MockRepository<T> : IBasicRepository<T>
     {
@@ -19,7 +19,7 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Testing
             Entities = seeds.ToList();
         }
 
-        public IQueryable<T> All()
+        public IEnumerable<T> All()
         {
             return Entities.AsQueryable();
         }

@@ -48,7 +48,7 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions.Dynamic
         /// </summary>
         /// <param name="existingParameterCount"></param>
         /// <returns></returns>
-        public ILinqResult ToSql(int existingParameterCount = 0, string parameterNamePrefix = SqlExpressionCompiler.DefaultParameterNamePrefix)
+        public ILinqResult Render(int existingParameterCount = 0, string parameterNamePrefix = SqlExpressionCompiler.DefaultParameterNamePrefix)
         {
             int parameterCount = existingParameterCount;
 
@@ -85,7 +85,7 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions.Dynamic
             var joins = new List<string>();
             foreach (ILinqJoinExpression jc in JoinClauses)
             {
-                LinqJoinResult r = jc.ToSql(parameterCount, parameterNamePrefix);
+                LinqJoinResult r = jc.Render(parameterCount, parameterNamePrefix);
                 foreach (string j in r.Join)
                 {
                     joins.Add(j);

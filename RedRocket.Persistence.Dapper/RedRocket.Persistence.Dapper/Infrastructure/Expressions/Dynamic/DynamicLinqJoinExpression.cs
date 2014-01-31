@@ -56,7 +56,7 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions.Dynamic
         /// </summary>
         public object[] Parameters { get; set; }
 
-        public LinqJoinResult ToSql(int existingParameterCount = 0, string parameterNamePrefix = SqlExpressionCompiler.DefaultParameterNamePrefix)
+        public LinqJoinResult Render(int existingParameterCount = 0, string parameterNamePrefix = SqlExpressionCompiler.DefaultParameterNamePrefix)
         {
             if (string.IsNullOrEmpty((parameterNamePrefix ?? string.Empty).Trim()))
             {

@@ -27,7 +27,7 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions
         public T Data { get; set; }
         public string TableNameOverride { get; set; }
 
-        public ILinqResult ToSql(int existingParameterCount = 0, string parameterNamePrefix = SqlExpressionCompiler.DefaultParameterNamePrefix)
+        public ILinqResult Render(int existingParameterCount = 0, string parameterNamePrefix = SqlExpressionCompiler.DefaultParameterNamePrefix)
         {
             int _parameterNumber = existingParameterCount;
             _parameterNumber++;

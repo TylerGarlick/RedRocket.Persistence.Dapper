@@ -17,6 +17,6 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions
         ///     generated using an ISQLinq instance that will be joined with this method calls results into a single query.
         /// </param>
         /// <returns></returns>
-        LinqJoinResult ToSql(int existingParameterCount = 0, string parameterNamePrefix = SqlExpressionCompiler.DefaultParameterNamePrefix);
+        LinqJoinResult Render(int existingParameterCount = 0, string parameterNamePrefix = SqlExpressionCompiler.DefaultParameterNamePrefix);
     }
 }

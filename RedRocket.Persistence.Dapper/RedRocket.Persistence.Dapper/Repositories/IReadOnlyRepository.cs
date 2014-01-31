@@ -1,12 +1,12 @@
 using System;
-using System.Linq;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace RedRocket.Persistence.Dapper
+namespace RedRocket.Persistence.Dapper.Infrastructure.Repositories
 {
     public interface IReadOnlyRepository<T>
     {
-        IQueryable<T> All();
+        IEnumerable<T> All();
 
         T FindByKey(Expression<Func<T, bool>> predicate);
     }

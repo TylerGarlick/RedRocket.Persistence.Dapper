@@ -9,9 +9,6 @@ namespace RedRocket.Persistence.Dapper
 {
     public static class Db
     {
-        public static IConnection Current { get; set; }
-        public static Dictionary<string, IConnection> Connections { get; set; }
-
         static Db()
         {
             Connections = Create.New<Dictionary<string, IConnection>>();
@@ -21,6 +18,9 @@ namespace RedRocket.Persistence.Dapper
             var key = Connections.Keys.First();
             Current = Connections[key];
         }
+
+        public static IConnection Current { get; set; }
+        public static Dictionary<string, IConnection> Connections { get; set; }
 
         public static void ChangeCurrentConnection(string connectionName)
         {

@@ -18,14 +18,12 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions
         public IList<string> Queries { get; set; }
         public IDictionary<string, object> Parameters { get; set; }
 
-        public string ToQuery()
+        public string ToSql()
         {
             var sql = new StringBuilder();
 
             foreach (string query in Queries)
-            {
                 sql.AppendLine(query);
-            }
 
             return sql.ToString();
         }

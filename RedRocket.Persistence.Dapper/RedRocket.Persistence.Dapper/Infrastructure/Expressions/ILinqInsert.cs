@@ -4,5 +4,8 @@
 
 namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions
 {
-    public interface ILinqInsert : ILinq {}
+    public interface ILinqInsert : ILinq
+    {
+        
+    }
 }

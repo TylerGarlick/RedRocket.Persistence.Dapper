@@ -25,7 +25,7 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions
         ///     Returns the Full SQL statement for the specified query
         /// </summary>
         /// <returns></returns>
-        public string ToQuery()
+        public string ToSql()
         {
             string orderby = ConcatFieldArray(OrderBy);
 

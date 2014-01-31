@@ -21,7 +21,7 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions
             AddRange(queries);
         }
 
-        public ILinqResult ToSql(int existingParameterCount = 0, string parameterNamePrefix = SqlExpressionCompiler.DefaultParameterNamePrefix)
+        public ILinqResult Render(int existingParameterCount = 0, string parameterNamePrefix = SqlExpressionCompiler.DefaultParameterNamePrefix)
         {
             int paramCount = existingParameterCount;
 
@@ -29,14 +29,14 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions
 
             foreach (ILinq query in this)
             {
-                ILinqResult r = query.ToSql(paramCount, parameterNamePrefix);
+                ILinqResult r = query.Render(paramCount, parameterNamePrefix);
 
                 foreach (var p in r.Parameters)
                 {
                     result.Parameters.Add(p);
                 }
 
-                result.Queries.Add(r.ToQuery());
+                result.Queries.Add(r.ToSql());
 
                 paramCount = existingParameterCount + result.Parameters.Count;
             }

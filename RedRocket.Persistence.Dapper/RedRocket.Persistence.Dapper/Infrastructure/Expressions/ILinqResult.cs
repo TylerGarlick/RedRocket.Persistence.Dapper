@@ -9,6 +9,6 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions
     public interface ILinqResult
     {
         IDictionary<string, object> Parameters { get; set; }
-        string ToQuery();
+        string ToSql();
     }
 }

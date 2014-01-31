@@ -20,7 +20,7 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions
         public string Else { get; set; }
         public IDictionary<string, object> Parameters { get; set; }
 
-        public string ToQuery()
+        public string ToSql()
         {
             bool isThenDefined = !string.IsNullOrWhiteSpace(Then);
             bool isElseDefined = !string.IsNullOrWhiteSpace(Else);

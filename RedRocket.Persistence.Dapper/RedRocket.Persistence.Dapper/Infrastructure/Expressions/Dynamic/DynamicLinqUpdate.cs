@@ -24,7 +24,7 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions.Dynamic
 
         private DynamicLinqExpressionCollection WhereClauses { get; set; }
 
-        public ILinqResult ToSql(int existingParameterCount = 1, string parameterNamePrefix = SqlExpressionCompiler.DefaultParameterNamePrefix)
+        public ILinqResult Render(int existingParameterCount = 1, string parameterNamePrefix = SqlExpressionCompiler.DefaultParameterNamePrefix)
         {
             int _parameterNumber = existingParameterCount;
 

@@ -39,9 +39,8 @@
     <Reference Include="FlitBit.Core">
       <HintPath>..\packages\FlitBit.Core.2.11.6\lib\net40\FlitBit.Core.dll</HintPath>
     </Reference>
-    <Reference Include="FlitBit.Dapper, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\FlitBit.Dapper.0.0.2\lib\net45\FlitBit.Dapper.dll</HintPath>
+    <Reference Include="FlitBit.Dapper">
+      <HintPath>..\packages\FlitBit.Dapper.0.0.4\lib\net45\FlitBit.Dapper.dll</HintPath>
     </Reference>
     <Reference Include="FlitBit.Dto">
       <HintPath>..\packages\FlitBit.Dto.2.5.0\lib\net40\FlitBit.Dto.dll</HintPath>
@@ -74,19 +73,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IBasicRepository.cs" />
+    <Compile Include="Infrastructure\Diagnostic\Logger.cs" />
+    <Compile Include="Infrastructure\Diagnostic\Providers\ConsoleLogProvider.cs" />
+    <Compile Include="Infrastructure\Diagnostic\DefaultLogger.cs" />
+    <Compile Include="Infrastructure\Diagnostic\ILogEvent.cs" />
+    <Compile Include="Infrastructure\Diagnostic\Providers\ILogProvider.cs" />
+    <Compile Include="Infrastructure\Diagnostic\Providers\NullLogProvider.cs" />
+    <Compile Include="Infrastructure\Diagnostic\Providers\TraceLogProvider.cs" />
+    <Compile Include="Infrastructure\DictionaryExtensions.cs" />
+    <Compile Include="Repositories\IBasicRepository.cs" />
     <Compile Include="IBatchRepository.cs" />
-    <Compile Include="IBatchTransactionRepository.cs" />
+    <Compile Include="Repositories\IBulkRepository.cs" />
     <Compile Include="Infrastructure\Configuration\DefaultConnection.cs" />
     <Compile Include="Db.cs" />
+    <Compile Include="Infrastructure\Expressions\AbstractLinqExpression.cs" />
     <Compile Include="Infrastructure\Expressions\ILinqDelete.cs" />
+    <Compile Include="Infrastructure\Expressions\Linq.T.cs" />
     <Compile Include="Infrastructure\Expressions\LinqDelete.cs" />
     <Compile Include="Infrastructure\Expressions\LinqDeleteResult.cs" />
-    <Compile Include="Infrastructure\Testing\MockRepository.cs" />
-    <Compile Include="IReadOnlyDapperRepository.cs" />
-    <Compile Include="IReadOnlyRepository.cs" />
-    <Compile Include="IBasicUpsertEnabledRepository.cs" />
-    <Compile Include="Infrastructure\Repository.cs" />
+    <Compile Include="Repositories\Testing\MockRepository.cs" />
+    <Compile Include="Repositories\IReadOnlyDapperRepository.cs" />
+    <Compile Include="Repositories\IReadOnlyRepository.cs" />
+    <Compile Include="Repositories\IUpsertRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Utils\EnumMapper.cs" />
     <Compile Include="Wireup.cs" />
     <Compile Include="ExternalWireup\Dependency.FlitBit.Dto.cs" />
     <Compile Include="ExternalWireup\Dependency.FlitBit.IoC.cs" />

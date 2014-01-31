@@ -28,14 +28,14 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Attributes
             var method = Type.GetMethod(Method);
             var query = (ILinq)method.Invoke(null, null);
 
-            var result = query.ToSql();
+            var result = query.Render();
 
             // Add parameters
             foreach (var p in result.Parameters)
                 parameters.Add(p.Key, p.Value);
 
             // return SQL
-            return result.ToQuery();
+            return result.ToSql();
         }
     }
 }

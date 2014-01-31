@@ -18,7 +18,7 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions.Dynamic
         public string Table { get; set; }
         public IDictionary<string, object> Data { get; set; }
 
-        public ILinqResult ToSql(int existingParameterCount = 1, string parameterNamePrefix = SqlExpressionCompiler.DefaultParameterNamePrefix)
+        public ILinqResult Render(int existingParameterCount = 1, string parameterNamePrefix = SqlExpressionCompiler.DefaultParameterNamePrefix)
         {
             int _parameterNumber = existingParameterCount;
 

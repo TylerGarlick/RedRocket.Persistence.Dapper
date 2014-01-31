@@ -61,7 +61,7 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions
         /// <returns></returns>
         public ILinq Else { get; set; }
 
-        public ILinqResult ToSql(int existingParameterCount = 0, string parameterNamePrefix = SqlExpressionCompiler.DefaultParameterNamePrefix)
+        public ILinqResult Render(int existingParameterCount = 0, string parameterNamePrefix = SqlExpressionCompiler.DefaultParameterNamePrefix)
         {
             int paramCount = existingParameterCount;
 
@@ -76,8 +76,8 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions
             }
             else
             {
-                ILinqResult ifResult = ((ILinq) If).ToSql(paramCount, parameterNamePrefix);
-                result.If = ifResult.ToQuery();
+                ILinqResult ifResult = ((ILinq) If).Render(paramCount, parameterNamePrefix);
+                result.If = ifResult.ToSql();
 
                 foreach (var p in ifResult.Parameters)
                 {
@@ -89,8 +89,8 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions
 
             if (Then != null)
             {
-                ILinqResult thenResult = Then.ToSql(paramCount, parameterNamePrefix);
-                result.Then = thenResult.ToQuery();
+                ILinqResult thenResult = Then.Render(paramCount, parameterNamePrefix);
+                result.Then = thenResult.ToSql();
 
                 foreach (var p in thenResult.Parameters)
                 {
@@ -101,8 +101,8 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions
 
             if (Else != null)
             {
-                ILinqResult elseResult = Else.ToSql(paramCount, parameterNamePrefix);
-                result.Else = elseResult.ToQuery();
+                ILinqResult elseResult = Else.Render(paramCount, parameterNamePrefix);
+                result.Else = elseResult.ToSql();
 
                 foreach (var p in elseResult.Parameters)
                 {

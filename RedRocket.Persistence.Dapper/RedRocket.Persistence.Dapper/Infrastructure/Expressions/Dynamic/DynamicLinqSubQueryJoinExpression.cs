@@ -45,15 +45,15 @@ namespace RedRocket.Persistence.Dapper.Infrastructure.Expressions.Dynamic
         public string Clause { get; set; }
         public object[] Parameters { get; set; }
 
-        public LinqJoinResult ToSql(int existingParameterCount = 0, string parameterNamePrefix = SqlExpressionCompiler.DefaultParameterNamePrefix)
+        public LinqJoinResult Render(int existingParameterCount = 0, string parameterNamePrefix = SqlExpressionCompiler.DefaultParameterNamePrefix)
         {
             if (string.IsNullOrEmpty((parameterNamePrefix ?? string.Empty).Trim()))
             {
                 throw new ArgumentException("parameterNamePrefix must be specified.", "parameterNamePrefix");
             }
 
-            ILinqResult subqueryResult = Query.ToSql(existingParameterCount, parameterNamePrefix);
-            string subquerySql = subqueryResult.ToQuery();
+            ILinqResult subqueryResult = Query.Render(existingParameterCount, parameterNamePrefix);
+            string subquerySql = subqueryResult.ToSql();
 
             var parameters = new Dictionary<string, object>();
             foreach (var p in subqueryResult.Parameters)
